@@ -28,7 +28,13 @@ nav {
   padding: 20px 24px;
   border-bottom: 1px solid #1a1a1a;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo img {
+  height: 28px;
+  display: block;
 }
 
 .page-navigation {
