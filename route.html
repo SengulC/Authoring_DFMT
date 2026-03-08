@@ -34,6 +34,7 @@
     <h2>The Asian Trail</h2>
     <p class="tour-description">A walking route through Dublin's northside taking in five restaurants representing the breadth of Asian cuisine — from Vietnamese pho to Japanese ramen to Indian street food.</p>
 
+    <br>
     <div id="map"></div>
 
     <script>
@@ -44,8 +45,17 @@
       }).addTo(map);
 
       // restaurant markers
-      var restau1 = L.marker([53.34446,-6.2489166]).addTo(map);
-      restau1.bindPopup("<b>Ninja Sushi</b><br>Affordable Japanese cuisine.");
+      var ninja = L.marker([53.34446,-6.2489166]).addTo(map);
+      var thaispice = L.marker([53.3510126,-6.2511741]).addTo(map);
+      var yangguo = L.marker([53.3503109,-6.2580057]).addTo(map);
+      var ohmy = L.marker([53.3455997,-6.2594968]).addTo(map);
+      var encha = L.marker([53.3488645,-6.2594064]).addTo(map);
+      
+      ninja.bindPopup("<b>Ninja Sushi</b><br>Affordable Japanese cuisine.");
+      thaispice.bindPopup("<b>Thai Spice</b><br>Affordable Thai cuisine.");
+      yangguo.bindPopup("<b>Yang Guo Fu Malatang</b><br>Affordable Chinese cuisine.");
+      ohmy.bindPopup("<b>Oh My Street Food</b><br>Affordable Chinese street food and boba.");
+      encha.bindPopup("<b>ENCHA</b><br>Affordable Japanese cuisine.");
     </script>
 
     <div class="walking-stops">
