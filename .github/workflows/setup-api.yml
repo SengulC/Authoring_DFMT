@@ -1,5 +1,5 @@
 name: API_KEY CI Pipeline
-#source: https://www.c-sharpcorner.com/article/how-do-i-secure-api-keys-when-using-github-actions-and-cicd-pipelines/
+#source: https://stackoverflow.com/questions/59686823/how-can-i-use-github-secrets-in-js-files
 
 on: [push]
 
@@ -7,10 +7,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Git checkout
+        uses: actions/checkout@v2
 
-      - name: Run build
+      - name: Use Node 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - name: Install Dependencies (prod)
+        run: yarn install --frozen-lockfile --production
+
+      - name: Run Tests (JEST)
+        run: yarn test --ci --silent --testPathIgnorePatterns=experimental
         env:
+          CI: true
           API_KEY: ${{ secrets.TEST_API_KEY }}
-        run: |
-          echo ${{ secrets.TEST_API_KEY }}
