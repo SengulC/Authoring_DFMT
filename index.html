@@ -25,30 +25,36 @@
     </div>
   </nav>
 
-  <section id="landing">
-    <!--
-      The h1 is the brand statement and the product description in one.
-      "Dublin's First" establishes novelty; "Multinational Cuisine Tour"
-      does the SEO and category work. Line breaks are intentional so
-      each line lands as its own beat on mobile.
-    -->
-    <h1>Dublin's First<br>Multinational<br>Cuisine Tour</h1>
-    <p class="tour-tagline">Eat the world, one street at a time</p>
-    <div class="tour-entry-actions">
-      <!--
-        Discover is the primary action as it leads to the routes where
-        the actual value of the service lives. About is secondary,
-        for visitors who need trust-building before they commit.
-      -->
-      <a href="discover.html" class="action-discover">Discover</a>
-      <a href="about.html" class="action-about">About</a>
-    </div>
-  </section>
+	<section id="landing">
+	  <div class="landing-bg" id="landingBg"></div>
+	  <h1>Dublin's First<br>Multinational<br>Cuisine Tour</h1>
+	  <p class="tour-tagline">Eat the world, one street at a time</p>
+	  <div class="tour-entry-actions">
+		<a href="discover.html" class="action-discover">Discover</a>
+		<a href="about.html" class="action-about">About</a>
+	  </div>
+	</section>
 
   <footer>
     <p>Dublin Cuisine Tour · Dublin, Ireland</p>
     <p>2025 · All rights reserved</p>
   </footer>
+
+	<script>
+	  const images = [
+		'images/american.jpg',
+		'images/east_asian.jpg',
+		'images/european.jpg',
+		'images/middle-eastern.jpg',
+		'images/south_asian.jpg'
+	  ];
+	  // Pick a different image each visit by incrementing a session counter
+	  const visitKey = 'dct_visit_count';
+	  const count = parseInt(sessionStorage.getItem(visitKey) || '0');
+	  sessionStorage.setItem(visitKey, count + 1);
+	  const chosen = images[count % images.length];
+	  document.getElementById('landingBg').style.backgroundImage = `url('${chosen}')`;
+	</script>
 
 </body>
 </html>
