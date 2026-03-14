@@ -6,7 +6,9 @@ dotenv.config();
 
 const API_KEY = process.env.local_dev_key;
 
-const coords = JSON.parse(fs.readFileSync("./data/coords.json", "utf-8"));
+const restData = JSON.parse(fs.readFileSync("./data/coords.json", "utf-8"));
+let coords = [];
+restData.filter((entry) => {coords.push([entry.lat, entry.lng])});
 
 function toLatLng(coord) {
   // convert lat lang data to google-interpretable object

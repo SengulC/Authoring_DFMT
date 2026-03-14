@@ -295,5 +295,11 @@ a.walking-route {
   text-decoration: none;
 }
 
+/* MAP STUFF */
 /* route.html: map height */
-#map { height: 360px; }
+#map { height: 540px; }
+
+.map-marker-popup {
+  text-align: center;
+  color: black;
+}
