@@ -248,7 +248,7 @@ footer p {
    Mirrors the walking-route card pattern from discover.html
    so the visual language stays consistent across pages. */
 
-.walking-stops {
+#walking-stops {
   margin-top: 32px;
   display: flex;
   flex-direction: column;
