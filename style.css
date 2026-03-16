@@ -248,7 +248,7 @@ footer p {
    Mirrors the walking-route card pattern from discover.html
    so the visual language stays consistent across pages. */
 
-.walking-stops {
+#walking-stops {
   margin-top: 32px;
   display: flex;
   flex-direction: column;
@@ -295,12 +295,18 @@ a.walking-route {
   text-decoration: none;
 }
 
-/* route.html: map height */
-#map { height: 360px; }
-
 .about-image {
   width: 100%;
   height: auto;
   margin-top: 24px;
   display: block;
+}
+
+/* MAP STUFF */
+/* route.html: map height */
+#map { height: 540px; }
+
+.map-marker-popup {
+  text-align: center;
+  color: black;
 }
