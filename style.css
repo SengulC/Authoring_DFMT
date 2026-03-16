@@ -59,15 +59,29 @@ nav {
 
 #landing {
   padding: 80px 24px 60px;
-  /*
-    min-height pushes the entry actions toward the lower third of the
-    screen, which is where thumbs naturally rest on a phone. Users
-    shouldn't have to stretch to tap Discover.
-  */
   min-height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.landing-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: blur(4px) brightness(0.35);
+  transform: scale(1.05);
+  z-index: 0;
+}
+
+/* Ensure all direct children of #landing sit above the background */
+#landing > *:not(.landing-bg) {
+  position: relative;
+  z-index: 1;
 }
 
 #landing h1 {
@@ -78,7 +92,7 @@ nav {
   letter-spacing: 2px;
 }
 
-.tour-tagline {
+#landing .tour-tagline {
   margin-top: 16px;
   font-size: 13px;
   letter-spacing: 2px;
@@ -234,7 +248,7 @@ footer p {
    Mirrors the walking-route card pattern from discover.html
    so the visual language stays consistent across pages. */
 
-.walking-stops {
+#walking-stops {
   margin-top: 32px;
   display: flex;
   flex-direction: column;
@@ -365,4 +379,19 @@ a.walking-route {
   width: 100%;
   height: 4px;
   background: var(--gold);
+}
+.about-image {
+  width: 100%;
+  height: auto;
+  margin-top: 24px;
+  display: block;
+}
+
+/* MAP STUFF */
+/* route.html: map height */
+#map { height: 540px; }
+
+.map-marker-popup {
+  text-align: center;
+  color: black;
 }
