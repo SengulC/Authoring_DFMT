@@ -1,17 +1,13 @@
+// initializing and fetching necessary data from json files
 const base = window.location.hostname == "127.0.0.1" ? "" : "/Authoring_DFMT";
 const coordsJson = await fetch(`${base}/map-creator/data/coords.json`); 
 const coordsData = await coordsJson.json();
-
 const routeJson = await fetch(`${base}/map-creator/data/route.json`); 
 const routeData = await routeJson.json(); 
 
 async function addMarker(map, lat, lng, title, desc, i) {
     const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary("marker");
     const { InfoWindow } = await google.maps.importLibrary("maps");
-    // const pin = new PinElement({
-    //   glyphText: `${i + 1}`,
-    //   scale: 1.5,
-    // });
 
     const marker = new AdvancedMarkerElement({
         map,
@@ -35,7 +31,7 @@ window.initMap = async function () {
     const { Map } = await google.maps.importLibrary("maps");
     const { encoding } = await google.maps.importLibrary("geometry");
 
-    // init map
+    // initialize the map
     const map = new Map(document.getElementById("map"), {
         mapId: "cf5ed18e8db31b4ec2cc4f24",
         center: { lat: 53.3, lng: -7.5 }, // centre of Ireland
@@ -62,16 +58,35 @@ window.initMap = async function () {
     path.forEach(point => bounds.extend(point));
     map.fitBounds(bounds);
 
+    // add a marker for each restaurant on path
     coordsData.forEach((restau, i) => addMarker(map, restau.lat, restau.lng, restau.name, restau.desc, i))
+
+    // draw path from user's geoloc to nearest spot
+    await findNearestStop()
+        .then(result => {
+            const userToClosestRestaurant = [
+                result.nearestStop,
+                result.userPos
+            ];
+            const userPath = new google.maps.Polyline({
+                path: userToClosestRestaurant,
+                geodesic: true,
+                strokeColor: '#FF0000',
+                strokeOpacity: 1.0,
+                strokeWeight: 2,
+            });
+            userPath.setMap(map); // NEED TO MAKE IT SO THAT INITMAP IS ENTRY POINT AND CALLS THESE FUNCTIONS AS IT NEEDS THEIR DATA..
+        })
+        .catch(err => console.error("findNearestStop failed:", err));
 }
 
-function handleLocationError(browserHasGeolocation, pos) {
-    console.log(
-    browserHasGeolocation
-        ? "Error: The Geolocation service failed."
-        : "Error: Your browser doesn't support geolocation.",
-    );
-}
+// function handleLocationError(browserHasGeolocation, pos) {
+//     console.log(
+//     browserHasGeolocation
+//         ? "Error: The Geolocation service failed."
+//         : "Error: Your browser doesn't support geolocation.",
+//     );
+// }
 
 window.initWalkingStops = async function () {
     let walking_stops = document.getElementById("walking-stops");
@@ -143,21 +158,3 @@ async function findNearestStop() {
 
 initMap();
 initWalkingStops();
-
-await findNearestStop()
-    .then(result => {
-        console.log(result.nearestStop);
-        const userToClosestRestaurant = [
-            result.nearestStop,
-            result.userPos
-        ];
-        const userPath = new google.maps.Polyline({
-            path: userToClosestRestaurant,
-            geodesic: true,
-            strokeColor: '#FF0000',
-            strokeOpacity: 1.0,
-            strokeWeight: 2,
-        });
-        userPath.setMap(Map); // NEED TO MAKE IT SO THAT INITMAP IS ENTRY POINT AND CALLS THESE FUNCTIONS AS IT NEEDS THEIR DATA..
-    })
-    .catch(err => console.error("findNearestStop failed:", err));
