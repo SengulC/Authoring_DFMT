@@ -4,6 +4,7 @@ const coordsJson = await fetch(`${base}/map-creator/data/coords.json`);
 const coordsData = await coordsJson.json();
 const routeJson = await fetch(`${base}/map-creator/data/route.json`); 
 const routeData = await routeJson.json(); 
+const userLocationPromise = getUserLocation();
 
 async function addMarker(map, lat, lng, title, desc, i) {
     const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary("marker");
@@ -62,7 +63,7 @@ window.initMap = async function () {
     coordsData.forEach((restau, i) => addMarker(map, restau.lat, restau.lng, restau.name, restau.desc, i))
 
     // draw path from user's geoloc to nearest spot
-    await findNearestStop()
+    findNearestStop()
         .then(result => {
             const userToClosestRestaurant = [
                 result.nearestStop,
@@ -127,18 +128,16 @@ async function getUserLocation() {
         return;
     }
     navigator.geolocation.getCurrentPosition(
-        (position) => resolve(new google.maps.LatLng(
-        position.coords.latitude,
-        position.coords.longitude
-        )),
-        (error) => reject(error)
+        (position) => resolve({lat: position.coords.latitude, lng: position.coords.longitude}),
+        (error) => reject(error),
+        { timeout: 30000, maximumAge: 60000, enableHighAccuracy: false } // wait longer before timing out
     );
     });
 }
 
 async function findNearestStop() {
     const { spherical } = await google.maps.importLibrary("geometry");
-    const userPos = await getUserLocation();
+    const userPos = await userLocationPromise;
 
     let nearestStop = null;
     let minDistance = Infinity;
