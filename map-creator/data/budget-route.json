@@ -810,7 +810,7 @@
           "duration": "487s",
           "staticDuration": "487s",
           "polyline": {
-            "encodedPolyline": "cvqdIdjfe@@ZhDKAuC~ErCDIr@b@NBv@d@R{@R[l@i@^BVNv@gHLD"
+            "encodedPolyline": "cvqdIdjfe@@ZxCKAyCNB~ErCDIr@b@NBv@d@R{@R[l@i@^BVNv@gHLD"
           },
           "startLocation": {
             "latLng": {
@@ -861,7 +861,7 @@
               "distanceMeters": 95,
               "staticDuration": "81s",
               "polyline": {
-                "encodedPolyline": "avqdI`kfe@hDK"
+                "encodedPolyline": "avqdI`kfe@xCK"
               },
               "startLocation": {
                 "latLng": {
@@ -871,8 +871,8 @@
               },
               "endLocation": {
                 "latLng": {
-                  "latitude": 53.3430039,
-                  "longitude": -6.263631999999999
+                  "latitude": 53.343077699999995,
+                  "longitude": -6.263634799999999
                 }
               },
               "navigationInstruction": {
@@ -891,20 +891,20 @@
             },
             {
               "distanceMeters": 55,
-              "staticDuration": "45s",
+              "staticDuration": "43s",
               "polyline": {
-                "encodedPolyline": "wpqdItjfe@AuC"
+                "encodedPolyline": "gqqdItjfe@AyC"
               },
               "startLocation": {
                 "latLng": {
-                  "latitude": 53.3430039,
-                  "longitude": -6.263631999999999
+                  "latitude": 53.343077699999995,
+                  "longitude": -6.263634799999999
                 }
               },
               "endLocation": {
                 "latLng": {
-                  "latitude": 53.343014399999994,
-                  "longitude": -6.2628762
+                  "latitude": 53.3430883,
+                  "longitude": -6.262861699999999
                 }
               },
               "navigationInstruction": {
@@ -923,14 +923,14 @@
             },
             {
               "distanceMeters": 218,
-              "staticDuration": "173s",
+              "staticDuration": "175s",
               "polyline": {
-                "encodedPolyline": "ypqdI~efe@~ErCDIr@b@NBv@d@"
+                "encodedPolyline": "iqqdIzefe@NB~ErCDIr@b@NBv@d@"
               },
               "startLocation": {
                 "latLng": {
-                  "latitude": 53.343014399999994,
-                  "longitude": -6.2628762
+                  "latitude": 53.3430883,
+                  "longitude": -6.262861699999999
                 }
               },
               "endLocation": {
@@ -2042,7 +2042,7 @@
         }
       ],
       "polyline": {
-        "encodedPolyline": "kerdIh}ee@PjAC?XzBB?@LC?b@rD~@GdCIHQnCEBNDjE`BE}AD?^C??jGCh@FfC?p@Bj@aE|@u@RPnFFj@RdE^jJ?V]??F{ANA`A?hAC|AOxDU~ECh@FDEl@AFWIOhCgAvJCZOxAGCAV@?g@jEAd@iAWi@OcC_@_HgAWOq@AKE@OSGBg@Cf@D@LDANXDb@@`@PfHhAzB^hBb@@e@f@kEA?@WFBNyAB[fAwJNqCGCHi@DB@ELDReFLsBFiBDkCAw@@e@zAOUyIOuC]_LNEBf@lBi@hCg@C}@AaAAiAC[Bi@?kGB??_@C?AqBj@EFKA[@ZhDKAuC~ErCDIr@b@NBv@d@R{@R[l@i@^BVNv@gHLDP?RiADy@A_AIe@OOoARo@McAc@[SPyCQxCqBkA_@~CY~AY~BDn@?HADAJCLKEe@`DKr@WnDWSi@CMLa@?a@E}AHk@@?^C??jGCh@FfC?p@Bj@aE|@u@RCg@OD@TcB`@QN_@@@XmAVAK}C~@B\\I[_FnAK{AJzA~EoAHZC]|C_AAMrAWZAPObBa@AUNEBf@hA]Jz@\\|@d@Ol@W"
+        "encodedPolyline": "kerdIh}ee@PjAC?XzBB?@LC?b@rD~@GdCIHQnCEBNDjE`BE}AD?^C??jGCh@FfC?p@Bj@aE|@u@RPnFFj@RdE^jJ?V]??F{ANA`A?hAC|AOxDU~ECh@FDEl@AFWIOhCgAvJCZOxAGCAV@?g@jEAd@iAWi@OcC_@_HgAWOq@AKE@OSGBg@Cf@D@LDANXDb@@`@PfHhAzB^hBb@@e@f@kEA?@WFBNyAB[fAwJNqCGCHi@DB@ELDReFLsBFiBDkCAw@@e@zAOUyIOuC]_LNEBf@lBi@hCg@C}@AaAAiAC[Bi@?kGB??_@C?AqBj@EFKA[@ZxCKAyCNB~ErCDIr@b@NBv@d@R{@R[l@i@^BVNv@gHLDP?RiADy@A_AIe@OOoARo@McAc@[SPyCQxCqBkA_@~CY~AY~BDn@?HADAJCLKEe@`DKr@WnDWSi@CMLa@?a@E}AHk@@?^C??jGCh@FfC?p@Bj@aE|@u@RCg@OD@TcB`@QN_@@@XmAVAK}C~@B\\I[_FnAK{AJzA~EoAHZC]|C_AAMrAWZAPObBa@AUNEBf@hA]Jz@\\|@d@Ol@W"
       }
     }
   ]
