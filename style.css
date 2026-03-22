@@ -45,7 +45,7 @@ nav {
 .page-navigation a {
   color: var(--white);
   text-decoration: none;
-  font-size: 12px;
+  font-size: 1rem;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   padding: 8px 16px;
@@ -58,12 +58,11 @@ nav {
 }
 
 #landing {
-  padding: 80px 24px 60px;
+  padding: 80px 80px 60px;
   min-height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   position: relative;
   overflow: hidden;
 }
@@ -86,18 +85,20 @@ nav {
 
 #landing h1 {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 64px;
+  font-size: 3rem;
   line-height: 0.95;
   color: var(--gold);
   letter-spacing: 2px;
+  text-align: center;
 }
 
 #landing .tour-tagline {
   margin-top: 16px;
-  font-size: 13px;
+  font-size: 1rem;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--muted);
+  text-align: center;
 }
 
 .tour-entry-actions {
@@ -106,6 +107,7 @@ nav {
   flex-direction: column;
   gap: 12px;
   max-width: 220px;
+  align-self: center;
 }
 
 .action-discover,
@@ -113,7 +115,7 @@ nav {
   display: block;
   text-align: center;
   padding: 13px 24px;
-  font-size: 12px;
+  font-size: 1rem;
   font-weight: 500;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -140,7 +142,7 @@ section {
 }
 
 .neighbourhood-eyebrow {
-  font-size: 11px;
+  font-size: 1rem;
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--gold);
@@ -149,13 +151,13 @@ section {
 
 section h2 {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 40px;
+  font-size: 3rem;
   letter-spacing: 1px;
   margin-bottom: 16px;
 }
 
 .tour-description {
-  font-size: 14px;
+  font-size: 1rem;
   line-height: 1.7;
   color: #aaa;
 }
@@ -178,7 +180,7 @@ section h2 {
 }
 
 .route-index {
-  font-size: 10px;
+  font-size: 1rem;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--gold);
@@ -187,7 +189,7 @@ section h2 {
 
 .walking-route h3 {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 26px;
+  font-size: 2rem;
   letter-spacing: 1px;
   margin-bottom: 8px;
 }
@@ -195,7 +197,7 @@ section h2 {
 .route-details {
   display: flex;
   gap: 14px;
-  font-size: 12px;
+  font-size: 1rem;
   color: var(--muted);
 }
 
@@ -217,13 +219,13 @@ section h2 {
 
 .fact-figure {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 40px;
+  font-size: 2rem;
   color: var(--gold);
   line-height: 1;
 }
 
 .fact-name {
-  font-size: 11px;
+  font-size: 1rem;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: var(--muted);
@@ -239,7 +241,7 @@ footer {
 }
 
 footer p {
-  font-size: 12px;
+  font-size: 1rem;
   color: #444;
   letter-spacing: 1px;
 }
@@ -266,7 +268,7 @@ footer p {
 }
 
 .stop-index {
-  font-size: 10px;
+  font-size: 1rem;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--gold);
@@ -275,7 +277,7 @@ footer p {
 
 .walking-stop h3 {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 26px;
+  font-size: 2rem;
   letter-spacing: 1px;
   margin-bottom: 8px;
 }
@@ -283,7 +285,7 @@ footer p {
 .stop-details {
   display: flex;
   gap: 14px;
-  font-size: 12px;
+  font-size: 1rem;
   color: var(--muted);
 }
 
@@ -303,7 +305,7 @@ a.walking-route {
 
 .hero h1 {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 56px;
+  font-size: 3rem;
   color: var(--gold);
   line-height: 1;
   margin-bottom: 16px;
@@ -312,7 +314,7 @@ a.walking-route {
 
 .hero p {
   color: #aaa;
-  font-size: 15px;
+  font-size: 1rem;
   line-height: 1.6;
   max-width: 90%;
   margin: 0 auto;
@@ -328,7 +330,7 @@ a.walking-route {
 }
 
 .missionbox h2 {
-  font-size: 28px;
+  font-size: 2rem;
 }
 
 .statswrapper {
@@ -351,7 +353,7 @@ a.walking-route {
 }
 
 .factbox .fact-figure {
-  font-size: 32px;
+  font-size: 2rem;
   margin-bottom: 4px;
 }
 
