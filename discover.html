@@ -26,6 +26,10 @@
   </nav>
 
   <main>
+    <script>
+      function directBudgetTour() { window.location.href = "route-budget.html"; }
+      function directExperienceTour() { window.location.href = "route-experience.html"; }
+    </script>
     <section id="discover">
       <p class="neighbourhood-eyebrow">Explore</p>
       <h2>Curated Routes</h2>
@@ -41,7 +45,7 @@
         are the only three things users need to decide if a route suits them.
       -->
 
-        <div class="walking-route">
+        <div onclick="directBudgetTour()" class="walking-route">
           <p class="route-index">Route 01</p>
           <h3>Budget Route</h3>
           <div class="route-details">
@@ -52,7 +56,7 @@
           <div class="carousel" data-route="budget"></div>
         </div>
 
-        <div class="walking-route">
+        <div onclick="directExperienceTour()" class="walking-route">
           <p class="route-index">Route 02</p>
           <h3>Experience Route</h3>
           <div class="route-details">
@@ -105,10 +109,11 @@
         images.forEach((_, i) => {
           const dot = document.createElement('span');
           dot.className = i === current ? 'active' : '';
-          dot.onclick = () => {
+          dot.onclick = (e) => {
+            e.stopPropagation(); // prevent the tour card's onClick, no direction when dot clicked
             current = i;
             render();
-            restartAuto();
+            restartAuto();          
           };
           dots.appendChild(dot);
         });
