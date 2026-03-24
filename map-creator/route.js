@@ -96,9 +96,9 @@ window.initWalkingStops = async function () {
         stop_details.classList.add("stop-details");
 
         let cuisine = document.createElement("span");
-        cuisine.innerHTML = restau.dish;
+        cuisine.innerHTML = restau.desc;
         let dish = document.createElement("span");
-        dish.innerHTML = restau.desc;
+        dish.innerHTML = `| Suggested dish: ${restau.dish}`;
         
         stop_details.append(cuisine, dish);
         walking_stop.append(stop_index, rest_name, stop_details);
