@@ -28,14 +28,14 @@ window.initMap = async function () {
 }
 
 // hlper function to add markers onto global var. map
-async function addMarker(map, lat, lng, title, desc, i) {
-    const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary("marker");
+async function addMarker(map, lat, lng, title, link) {
+    const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
     const { InfoWindow } = await google.maps.importLibrary("maps");
 
     const marker = new AdvancedMarkerElement({
         map,
         position: { lat, lng },
-        title: `${i + 1}. ${title} ${desc}`,
+        title: title,
         gmpClickable: true,
     });
 
@@ -44,12 +44,12 @@ async function addMarker(map, lat, lng, title, desc, i) {
         infoWindow.close();
         const div = document.createElement("div");
         div.className = "map-marker-popup";
-        div.innerHTML = title + ": " + desc;
+        console.log(link);
+        div.innerHTML = `Directions: <a href=${link}>${title}</a>`;
         infoWindow.setContent(div);
         infoWindow.open(marker.map, marker);
     });
 }
- 
 // initialize pre-defined budget/experience route
 window.initRoute = async function () {
     const { encoding } = await google.maps.importLibrary("geometry");
@@ -74,7 +74,7 @@ window.initRoute = async function () {
     map.fitBounds(bounds);
 
     // add a marker for each restaurant on path
-    coordsData.forEach((restau, i) => addMarker(map, restau.lat, restau.lng, restau.name, restau.desc, i))
+    coordsData.forEach((restau, i) => addMarker(map, restau.lat, restau.lng, restau.name, restau.link))
 }
 
 // initialize walking stops HTML for pre-defined route
