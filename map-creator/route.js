@@ -97,13 +97,30 @@ window.initWalkingStops = async function () {
 
         let cuisine = document.createElement("span");
         cuisine.innerHTML = restau.desc;
-        let dish = document.createElement("span");
-        dish.innerHTML = `| Suggested dish: ${restau.dish}`;
+        let location = document.createElement("span");
+        location.innerHTML = `${restau.eircode}`;
+
+        let pop_up = document.createElement("div");
+        pop_up.classList.add("restaurant-popup");
+        let pop_name = document.createElement("h4");
+        pop_name.innerHTML = restau.name;
+        let pop_dish = document.createElement("p");
+        let pop_amenities = document.createElement("p");
+        let pop_hours = document.createElement("p");
+        let pop_directions = document.createElement("p");
+        pop_dish.innerHTML= `<strong>Popular Dish:</strong> ${restau.dish}.`;
+        pop_amenities.innerHTML = `<strong>Amenities:</strong> ${restau.amenities}`;
+        pop_hours.innerHTML = `<strong>Hours:</strong> ${restau.hours}`;
+        pop_directions.innerHTML = `<strong>Directions:</strong> <a href=${restau.link}>${restau.eircode} via Google Maps</a>`;
         
-        stop_details.append(cuisine, dish);
-        walking_stop.append(stop_index, rest_name, stop_details);
+        pop_up.append(pop_name, pop_dish, pop_amenities, pop_hours, pop_directions);
+        stop_details.append(cuisine, location);
+        walking_stop.append(stop_index, rest_name, stop_details, pop_up);
 
         walking_stops.append(walking_stop);
+        walking_stop.addEventListener("click", () => {
+            walking_stop.classList.toggle("active");
+        });
     }
     )    
 }  
