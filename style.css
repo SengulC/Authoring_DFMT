@@ -591,3 +591,8 @@ a.walking-route {
 .carousel-dots span.active {
   background: var(--gold);
 }
+
+.route-description p {
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
